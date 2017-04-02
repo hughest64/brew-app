@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Timer object for setting our xml data
 recipe_data = BeerXMLParser()
 # may move this locally to the recipes view
-FPATH = os.getcwd() +'\\recipes\\'
+FPATH = os.getcwd() +'//recipes//'
 # default value has to be a dict with some value
 recipe_name = {'recipe':"no recipe"}
 
