@@ -12,7 +12,7 @@
             localStorage['hop_adds'] = hop_adds
             localStorage['steps'] = steps;
             localStorage['recipeName'] = "{{ data['recipe_name'] }}";
-            // set this to -1 so that nextTimer() will set a 0 index the script loads
+            // set this to -1 so that nextTimer() will set a 0 index when the script loads
             localStorage['stepIndex'] = '-1';
             localStorage['recipeLoaded'] = "true";
         }
@@ -28,7 +28,7 @@
         <li id="last">Est ABV: 6%</li>
     </ul>
 {% endblock %}
-
+<!-- nav content is included here from layout.html -->
 {% block content %}
     <section id="main-content">
         <div id="timer-content">
