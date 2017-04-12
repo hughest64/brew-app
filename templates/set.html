@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form action="/timer">
+    <h1>This will likely be deprecated!</h1>
+    <div>
+        <input id="hr" type="number" min="0" max="90" placeholder="HH">
+        <input id="mn" type="number" min="0" max="90" placeholder="MM">
+        <input id="sec" type="number" min="0" max="59" placeholder="SS">
+        <button type="submit" id="save" onclick="setNewTimer()">Save</button>
+    </div>
+</form>
+<script src="/static/script.js{{ query }}"></script>
+{% endblock %}

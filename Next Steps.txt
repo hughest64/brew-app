@@ -1,0 +1,24 @@
+
+some todo:
+- change hop add alerts to a modal (hope to push notifications some day)
+- finish formatting the alert message
+- make the list of steps clickable to jump to that step and set the timer
+- add functionality to add time to a timer without setting a new one.
+
+- add ability to clear all of the data (including the recipe selected)
+  - basically dump everything from localStorage.
+
+- add in some recipe "vitals", est OG, FG, actuals, pH, etc.
+
+- add functionality to "upload" files to the recipes directory
+
+- clean up app.py (doc strings!?!)
+
+  timer step concerns:
+
+  - what happens when we set a manual timer after a recipe has been selected?
+  - it currently keeps the step label in place, perhaps it should change the label
+  to "Manual" or some such. This would require a new function to set the label
+  and then call setTimer().
+  - We should also have the ability to go back to the main brew timers
+  once that is done.
