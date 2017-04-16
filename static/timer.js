@@ -117,23 +117,17 @@ function nextTimer() {
         setTimer();
     }
 }
-// deprecate  this outter if/else!!!
-if (!localStorage['newTimer']) {
-    if (localStorage['recipeLoaded']) {
-        recipeName.innerHTML = localStorage['recipeName']
-        nextTimer();
-        localStorage['recipeLoaded'] = '';
 
-    } else {
-        formatDisplay(localStorage['remainingTime']);
-        var index = Number(localStorage['stepIndex'])
-        var parsed = JSON.parse(steps);
-        recipeName.innerHTML = localStorage['recipeName']
-        current_step.innerHTML = parsed[index][0];
-        runTimer();
-    }
+if (localStorage['recipeLoaded']) {
+    recipeName.innerHTML = localStorage['recipeName']
+    nextTimer();
+    localStorage['recipeLoaded'] = '';
 
 } else {
-    localStorage['newTimer'] = '';
     formatDisplay(localStorage['remainingTime']);
+    var index = Number(localStorage['stepIndex'])
+    var parsed = JSON.parse(steps);
+    recipeName.innerHTML = localStorage['recipeName']
+    current_step.innerHTML = parsed[index][0];
+    runTimer();
 }
