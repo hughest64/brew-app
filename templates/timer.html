@@ -56,7 +56,7 @@
             <ul>
                 {% for hops in data['boil'] | sort(reverse=True) %}
                     {% for hop in data['boil'][hops] %}
-                    <li><p>{{ "{2} minutes - add {1}oz of {0}".format(*hop) }}</p></li>
+                    <li>{{ "{2} minutes - add {1}oz of {0}".format(*hop) }}</li>
                     {% endfor %}
                 {% endfor %}
             </ul>
