@@ -1,0 +1,19 @@
+Steps used in CSS layout:
+
+1. layout out HTML elements and assign classes
+2. temporarily give every element a 1px red border (to better see margins)
+3. align the bulk of text as necessary
+4. set size and margins of wrapper/set general mobile layout
+5. give background-color to containers
+6. set some margin/padding on those containers
+7. select font sizes
+8. select fonts
+9. set margins/padding on elements in containers
+10. remove temporary borders
+11. set final color scheme
+12. small details like box/text shadows, etc.
+
+-not done-
+13. change focus to desktop layout
+14. make a step 14.
+15. make sure step 14 is completed.

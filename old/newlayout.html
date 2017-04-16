@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test Layout</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:700|Josefin+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <!-- centereed on mobil/float left on dekstop -->
+        <h2 class="name">ORION (AMERIcAN STYLE BITTER)</h2>
+        <!-- centereed on mobile/float right on dekstop -->
+        <ul class="recipe-details">
+            <li>Vol: 11 gal</li>
+            <li>OG: 1.060</li>
+            <li>ABV: 6.0%</li>
+            <!-- <li>Brew Date: 04/15/16</li> -->
+        </ul>
+    </header>
+    <!-- place nav under header for mobile but float (left?) on desktop -->
+    <nav class="main-nav">
+        <ul class="main-nav-list">
+            <li><a href="">Home</a></li>
+            <li><a href="">Timer</a></li>
+            <li><a href="">Recipes</a></li>
+            <li><a href="">Set</a></li>
+        </ul>
+    </nav>
+    <section class="wrapper">
+        <div class="timer-container">
+            <h3 class="container-heading">step NAME</h3>
+            <h1 class="timer-display">00:00</h1>
+            <div class="timer-buttons">
+                <button>Start</button>
+                <button>Stop</button>
+                <button>Reset</button>
+                <button>Clear</button>
+                <button>Next</button>
+            </div>
+        </div>
+        <!-- could be a valid place for an ID -->
+        <div class="container">
+            <h3 class="container-heading">mash STEPS</h3>
+            <ul>
+                <li>Steps here</li>
+                <li>Steps here</li>
+                <li>Steps here</li>
+            </ul>
+        </div>
+        <!-- could be a valid place for an ID -->
+        <div class="container">
+            <h3 class="container-heading">BOIL ADDITIONS</h3>
+            <ul>
+                <li>Hops here adding text to make it wrap to two lines hopefully</li>
+                <li>Hops here adding text to make it wrap to two lines hopefully</li>
+                <li>Hops here</li>
+            </ul>
+        </div>
+        <!-- may be other divs for more information on mobile like:
+             recipe details, brewday stats (pH, boil grav, etc)
+             these would be block elements on mbile buy may move on desktop -->
+    </section>
+    <footer>
+        <!-- this could be in the footer or it's position could be absolute?
+             or the footer could just be fixed -->
+        <h3>Set a Manual Timer</h3>
+        <button>Set</button>
+    </footer>
+
+    <!-- this will get set up as a modal
+         and will be hidden by default -->
+    <section class="timer-set">
+        <h3>Manual Timer</h3>
+        <input type="number">
+        <input type="number">
+        <input type="number">
+        <button>Save</button>
+    </section>
+</body>
+</html>

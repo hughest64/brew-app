@@ -1,0 +1,149 @@
+/***********************************************
+GENERAL
+************************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E9E9E9;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 1px 1px 2px #000;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #b3dbff;
+}
+
+/**** temporary!!! ****/
+footer,
+.timer-set {
+    display: none;
+}
+
+
+
+/***********************************************
+HEADING
+************************************************/
+
+header,
+.main-nav {
+    background-color: #003b6f;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.main-nav {
+    border-top: 2px solid #fff;
+}
+
+.name {
+    margin: 0;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.recipe-details,
+.main-nav-list {
+    margin: 0;
+}
+
+.recipe-details li {
+    display: inline-block;
+    font-size: .9em;
+    margin: 0 -2px;
+    padding: 0 10px;
+    border-right: 2px solid #fff;
+}
+
+.main-nav li {
+    display: inline-block;
+    padding: 0 10px 0;
+    font-weight: bold;
+}
+
+.recipe-details li:last-child {
+    border: none;
+}
+
+
+
+/***********************************************
+CONTENT
+************************************************/
+
+.wrapper {
+    /* these two rules can be used in desktop mode */
+    /*width: 90%;
+    margin: 0 auto;*/
+    padding-top: 20px;
+    border: 1px solid #000;
+}
+
+.timer-container,
+.container {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto 20px;
+    padding: 5px 0;
+    border-radius: 5px;
+    box-shadow:
+      3px 5px 10px #999;
+}
+
+.timer-container {
+    background-color: #fff;
+}
+
+.timer-container h3 {
+    text-shadow: none;
+}
+
+.timer-display {
+    margin: 0;
+    border-top: 2px solid #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+}
+
+.timer-buttons button {
+    margin: 0 3px;
+}
+
+.container {
+    background-color: #003b6f;
+    color: #fff;
+}
+
+.container-heading {
+    margin: 0;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.container ul {
+    margin: 0;
+    padding-top: 15px;
+    border-top: 2px solid #fff;
+}
+
+.container li {
+    margin-bottom: 10px;
+    padding: 0px 20px;
+    text-align: left;
+    /*font-family: 'Roboto Condensed', sans-serif;*/
+    font-weight: 400;
+}
