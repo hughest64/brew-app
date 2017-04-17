@@ -8,7 +8,25 @@ some todo:
 - add ability to clear all of the data (including the recipe selected)
   - basically dump everything from localStorage.
 
-- add in some recipe "vitals", est OG, FG, actuals, pH, etc.
+beer xml gets:
+  *** there are many cool things in the <NOTES> element of a beer msl file ***
+  - ABV *
+  - est OG *
+  - batch size *
+
+  - pre boil grav
+  - pre boil vol
+  - (not from beer xml) acid amts, strike pH, mash pH, boil pH
+
+  - first wort hops
+  - dry hops
+
+  - est FG
+  - strike temp (infuse temp of the fist step)
+  (separate page for these?)
+  - grains/amounts/percentages
+  - yeast
+  - notes?
 
 - add functionality to "upload" files to the recipes directory
 
