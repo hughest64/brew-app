@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><RECIPES>
+<RECIPE>
+ <NAME>Dry Irish Stout</NAME>
+ <VERSION>1</VERSION>
+ <TYPE>All Grain</TYPE>
+ <BREWER>Todd</BREWER>
+ <ASST_BREWER></ASST_BREWER>
+ <BATCH_SIZE>41.6397696</BATCH_SIZE>
+ <BOIL_SIZE>51.0244904</BOIL_SIZE>
+ <BOIL_TIME>60.0000000</BOIL_TIME>
+ <EFFICIENCY>80.0000000</EFFICIENCY>
+ <HOPS>
+<HOP>
+ <NAME>Target</NAME>
+ <VERSION>1</VERSION>
+ <ORIGIN>United Kingdom</ORIGIN>
+ <ALPHA>8.0000000</ALPHA>
+ <AMOUNT>0.0708737</AMOUNT>
+ <USE>Boil</USE>
+ <TIME>60.0000000</TIME>
+ <NOTES>Used for: English ales and lagers
+Aroma: Robust aroma and flavor
+Substitutes: East Kent Goldings</NOTES>
+ <TYPE>Bittering</TYPE>
+ <FORM>Pellet</FORM>
+ <BETA>5.0000000</BETA>
+ <HSI>50.0000000</HSI>
+ <DISPLAY_AMOUNT>2.50 oz</DISPLAY_AMOUNT>
+ <INVENTORY>0.00 oz</INVENTORY>
+ <DISPLAY_TIME>60.0 min</DISPLAY_TIME>
+</HOP>
+<HOP>
+ <NAME>Fuggle</NAME>
+ <VERSION>1</VERSION>
+ <ORIGIN>United Kingdom</ORIGIN>
+ <ALPHA>4.2000000</ALPHA>
+ <AMOUNT>0.0283495</AMOUNT>
+ <USE>Boil</USE>
+ <TIME>10.0000000</TIME>
+ <NOTES>Traditional English-type aroma hop.
+Used for: English Ales, ESB, Bitter, Lagers
+Aroma: Mild, soft, fruity, spicy, woody
+Substitute: Fuggle (U.S.), Willamette, Styrian Golding
+Storage: Good/Very Good (70-80% AA after 6 months at 20 C)
+3-5.6% AA 2-3% Beta</NOTES>
+ <TYPE>Aroma</TYPE>
+ <FORM>Pellet</FORM>
+ <BETA>2.5000000</BETA>
+ <HSI>60.0000000</HSI>
+ <DISPLAY_AMOUNT>1.00 oz</DISPLAY_AMOUNT>
+ <INVENTORY>0.00 oz</INVENTORY>
+ <DISPLAY_TIME>10.0 min</DISPLAY_TIME>
+</HOP>
+</HOPS>
+
+ <FERMENTABLES>
+<FERMENTABLE>
+ <NAME>Maris Otter</NAME>
+ <VERSION>1</VERSION>
+ <TYPE>Grain</TYPE>
+ <AMOUNT>5.4431040</AMOUNT>
+ <YIELD>80.0000000</YIELD>
+ <COLOR>3.0000000</COLOR>
+ <ADD_AFTER_BOIL>FALSE</ADD_AFTER_BOIL>
+ <ORIGIN>United Kingdom</ORIGIN>
+ <SUPPLIER>Warminster</SUPPLIER>
+ <NOTES>Premium base malt from the UK.  Popular for many English styles of beer including ales, pale ales and bitters. Floor malted to kick ass. </NOTES>
+ <COARSE_FINE_DIFF>1.5000000</COARSE_FINE_DIFF>
+ <MOISTURE>3.5000000</MOISTURE>
+ <DIASTATIC_POWER>100.0000000</DIASTATIC_POWER>
+ <PROTEIN>10.0000000</PROTEIN>
+ <MAX_IN_BATCH>100.0000000</MAX_IN_BATCH>
+ <RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+ <IBU_GAL_PER_LB>0.0000000</IBU_GAL_PER_LB>
+ <DISPLAY_AMOUNT>12 lbs</DISPLAY_AMOUNT>
+ <INVENTORY>10 lbs</INVENTORY>
+ <POTENTIAL>1.0368000</POTENTIAL>
+ <DISPLAY_COLOR>3.0 SRM</DISPLAY_COLOR>
+ <EXTRACT_SUBSTITUTE></EXTRACT_SUBSTITUTE>
+</FERMENTABLE>
+<FERMENTABLE>
+ <NAME>Barley, Flaked</NAME>
+ <VERSION>1</VERSION>
+ <TYPE>Grain</TYPE>
+ <AMOUNT>1.8143680</AMOUNT>
+ <YIELD>70.0000000</YIELD>
+ <COLOR>1.7000000</COLOR>
+ <ADD_AFTER_BOIL>FALSE</ADD_AFTER_BOIL>
+ <ORIGIN>US</ORIGIN>
+ <SUPPLIER></SUPPLIER>
+ <NOTES>Adds significant body to Porters and Stouts.  High haze producing protein prevents use in light beers.</NOTES>
+ <COARSE_FINE_DIFF>1.5000000</COARSE_FINE_DIFF>
+ <MOISTURE>9.0000000</MOISTURE>
+ <DIASTATIC_POWER>0.0000000</DIASTATIC_POWER>
+ <PROTEIN>13.5000000</PROTEIN>
+ <MAX_IN_BATCH>20.0000000</MAX_IN_BATCH>
+ <RECOMMEND_MASH>TRUE</RECOMMEND_MASH>
+ <IBU_GAL_PER_LB>0.0000000</IBU_GAL_PER_LB>
+ <DISPLAY_AMOUNT>4 lbs</DISPLAY_AMOUNT>
+ <INVENTORY>0.0 oz</INVENTORY>
+ <POTENTIAL>1.0322000</POTENTIAL>
+ <DISPLAY_COLOR>1.7 SRM</DISPLAY_COLOR>
+ <EXTRACT_SUBSTITUTE>Carafoam</EXTRACT_SUBSTITUTE>
+</FERMENTABLE>
+<FERMENTABLE>
+ <NAME>Roasted Barley</NAME>
+ <VERSION>1</VERSION>
+ <TYPE>Grain</TYPE>
+ <AMOUNT>0.9071840</AMOUNT>
+ <YIELD>55.0000000</YIELD>
+ <COLOR>500.0000000</COLOR>
+ <ADD_AFTER_BOIL>FALSE</ADD_AFTER_BOIL>
+ <ORIGIN>UK</ORIGIN>
+ <SUPPLIER></SUPPLIER>
+ <NOTES>Unmalted barley roasted at high temperature to create a dry, coffee like flavor.
+Imparts a sharp acrid flavor characteristic of dry stouts. Gives &#34;dryness&#34; to a stout or porter.</NOTES>
+ <COARSE_FINE_DIFF>1.5000000</COARSE_FINE_DIFF>
+ <MOISTURE>5.0000000</MOISTURE>
+ <DIASTATIC_POWER>0.0000000</DIASTATIC_POWER>
+ <PROTEIN>13.2000000</PROTEIN>
+ <MAX_IN_BATCH>10.0000000</MAX_IN_BATCH>
+ <RECOMMEND_MASH>FALSE</RECOMMEND_MASH>
+ <IBU_GAL_PER_LB>0.0000000</IBU_GAL_PER_LB>
+ <DISPLAY_AMOUNT>2 lbs</DISPLAY_AMOUNT>
+ <INVENTORY>0.0 oz</INVENTORY>
+ <POTENTIAL>1.0253000</POTENTIAL>
+ <DISPLAY_COLOR>500.0 SRM</DISPLAY_COLOR>
+ <EXTRACT_SUBSTITUTE></EXTRACT_SUBSTITUTE>
+</FERMENTABLE>
+</FERMENTABLES>
+
+ 
+ <YEASTS>
+<YEAST>
+ <NAME>Irish Ale</NAME>
+ <VERSION>1</VERSION>
+ <TYPE>Ale</TYPE>
+ <FORM>Liquid</FORM>
+ <AMOUNT>0.0000000</AMOUNT>
+ <AMOUNT_IS_WEIGHT>FALSE</AMOUNT_IS_WEIGHT>
+ <LABORATORY>Omega</LABORATORY>
+ <PRODUCT_ID>OYL-005</PRODUCT_ID>
+ <MIN_TEMPERATURE>16.6666667</MIN_TEMPERATURE>
+ <MAX_TEMPERATURE>22.2222222</MAX_TEMPERATURE>
+ <FLOCCULATION>Medium</FLOCCULATION>
+ <ATTENUATION>72.0000000</ATTENUATION>
+ <NOTES>A popular choice for dark beers and high gravity beers. Beers fermented in the lower temperature range produce a dry, crisp profile with subtle fruitiness. Fruit and complex esters will increase when fermentation temperatures are above 64&#176;F</NOTES>
+ <BEST_FOR>Irish Ales, Stouts, Porters, Browns, Reds and Pale Ale</BEST_FOR>
+ <MAX_REUSE>5</MAX_REUSE>
+ <TIMES_CULTURED>0</TIMES_CULTURED>
+ <ADD_TO_SECONDARY>FALSE</ADD_TO_SECONDARY>
+ <DISPLAY_AMOUNT>0.00 ml</DISPLAY_AMOUNT>
+ <DISP_MIN_TEMP>62.0 F</DISP_MIN_TEMP>
+ <DISP_MAX_TEMP>72.0 F</DISP_MAX_TEMP>
+ <INVENTORY>0.0 pkg</INVENTORY>
+ <CULTURE_DATE>26 Jan 2016</CULTURE_DATE>
+</YEAST>
+</YEASTS>
+
+ 
+ <STYLE>
+ <NAME>Dry Stout</NAME>
+ <VERSION>1</VERSION>
+ <CATEGORY>Stout</CATEGORY>
+ <CATEGORY_NUMBER>13</CATEGORY_NUMBER>
+ <STYLE_LETTER>A</STYLE_LETTER>
+ <STYLE_GUIDE>BJCP 2008</STYLE_GUIDE>
+ <TYPE>Ale</TYPE>
+ <OG_MIN>1.0360000</OG_MIN>
+ <OG_MAX>1.0500000</OG_MAX>
+ <FG_MIN>1.0070000</FG_MIN>
+ <FG_MAX>1.0110000</FG_MAX>
+ <IBU_MIN>30.0000000</IBU_MIN>
+ <IBU_MAX>45.0000000</IBU_MAX>
+ <COLOR_MIN>25.0000000</COLOR_MIN>
+ <COLOR_MAX>40.0000000</COLOR_MAX>
+ <CARB_MIN>1.8000000</CARB_MIN>
+ <CARB_MAX>2.5000000</CARB_MAX>
+ <ABV_MAX>5.0000000</ABV_MAX>
+ <ABV_MIN>4.0000000</ABV_MIN>
+ <NOTES>A very dark, roasty, bitter, creamy ale. The style evolved from attempts to capitalize on the success of London porters, but originally reflected a fuller, creamier, more &#8220;stout&#8221; body and strength. When a brewery offered a stout and a porter, the stout was always the stronger beer (it was originally called a &#8220;Stout Porter&#8221;). Modern versions are brewed from a lower OG and no longer reflect a higher strength than porters. This is the draught version of what is otherwise known as Irish stout or Irish dry stout. Bottled versions are typically brewed from a significantly higher OG and may be designated as foreign extra stouts (if sufficiently strong). While most commercial versions rely primarily on roasted barley as the dark grain, others use chocolate malt, black malt or combinations of the three. The level of bitterness is somewhat variable, as is the roasted character and the dryness of the finish; allow for interpretation by brewers.</NOTES>
+ <PROFILE>Aroma: Coffee-like roasted barley and roasted malt aromas are prominent; may have slight chocolate, cocoa and/or grainy secondary notes. Esters medium-low to none. No diacetyl. Hop aroma low to none.
+Appearance: Jet black to deep brown with garnet highlights in color. Can be opaque (if not, it should be clear). A thick, creamy, long-lasting, tan- to brown-colored head is characteristic.
+Flavor: Moderate roasted, grainy sharpness, optionally with light to moderate acidic sourness, and medium to high hop bitterness. Dry, coffee-like finish from roasted grains. May have a bittersweet or unsweetened chocolate character in the palate, lasting into the finish. Balancing factors may include some creaminess, medium-low to no fruitiness, and medium to no hop flavor. No diacetyl.
+Mouthfeel: Medium-light to medium-full body, with a creamy character. Low to moderate carbonation. For the high hop bitterness and significant proportion of dark grains present, this beer is remarkably smooth. The perception of body can be affected by the overall gravity with smaller beers being lighter in body. May have a light astringency from the roasted grains, although harshness is undesirable.</PROFILE>
+ <INGREDIENTS>The dryness comes from the use of roasted unmalted barley in addition to pale malt, moderate to high hop bitterness, and good attenuation. Flaked unmalted barley may also be used to add creaminess. A small percentage (perhaps 3%) of soured beer is sometimes added for complexity (generally by Guinness only). Water typically has moderate carbonate hardness, although high levels will not give the classic dry finish.</INGREDIENTS>
+ <EXAMPLES>Guinness Draught Stout (also canned), Murphy&#39;s Stout, Beamish Stout, O&#8217;Hara&#8217;s Celtic Stout, Russian River O.V.L. Stout, Three Floyd&#8217;s Black Sun Stout, Dorothy Goodbody&#8217;s Wholesome Stout, Orkney Dragonhead Stout, Old Dominion Stout, Goose Island Dublin Stout, Brooklyn Dry Stout</EXAMPLES>
+ <DISPLAY_OG_MIN>1.036 SG</DISPLAY_OG_MIN>
+ <DISPLAY_OG_MAX>1.050 SG</DISPLAY_OG_MAX>
+ <DISPLAY_FG_MIN>1.007 SG</DISPLAY_FG_MIN>
+ <DISPLAY_FG_MAX>1.011 SG</DISPLAY_FG_MAX>
+ <DISPLAY_COLOR_MIN>25.0 SRM</DISPLAY_COLOR_MIN>
+ <DISPLAY_COLOR_MAX>40.0 SRM</DISPLAY_COLOR_MAX>
+ <OG_RANGE>1.036-1.050 SG</OG_RANGE>
+ <FG_RANGE>1.007-1.011 SG</FG_RANGE>
+ <IBU_RANGE>30.0-45.0 IBUs</IBU_RANGE>
+ <CARB_RANGE>1.80-2.50 Vols</CARB_RANGE>
+ <COLOR_RANGE>25.0-40.0 SRM</COLOR_RANGE>
+ <ABV_RANGE>4.00-5.00 %</ABV_RANGE>
+</STYLE>
+
+ <EQUIPMENT>
+ <NAME>Big Mash</NAME>
+ <VERSION>1</VERSION>
+ <BOIL_SIZE>51.0244904</BOIL_SIZE>
+ <BATCH_SIZE>41.6397696</BATCH_SIZE>
+ <TUN_VOLUME>37.8543360</TUN_VOLUME>
+ <TUN_WEIGHT>4.5359200</TUN_WEIGHT>
+ <TUN_SPECIFIC_HEAT>0.3000000</TUN_SPECIFIC_HEAT>
+ <TOP_UP_WATER>0.0000000</TOP_UP_WATER>
+ <TRUB_CHILLER_LOSS>1.8927168</TRUB_CHILLER_LOSS>
+ <EVAP_RATE>11.1282844</EVAP_RATE>
+ <BOIL_TIME>60.0000000</BOIL_TIME>
+ <CALC_BOIL_VOLUME>TRUE</CALC_BOIL_VOLUME>
+ <LAUTER_DEADSPACE>1.4384648</LAUTER_DEADSPACE>
+ <TOP_UP_KETTLE>0.0000000</TOP_UP_KETTLE>
+ <HOP_UTILIZATION>100.0000000</HOP_UTILIZATION>
+ <COOLING_LOSS_PCT>4.0000000</COOLING_LOSS_PCT>
+ <NOTES></NOTES>
+ <DISPLAY_BOIL_SIZE>13.48 gal</DISPLAY_BOIL_SIZE>
+ <DISPLAY_BATCH_SIZE>11.00 gal</DISPLAY_BATCH_SIZE>
+ <DISPLAY_TUN_VOLUME>10.00 gal</DISPLAY_TUN_VOLUME>
+ <DISPLAY_TUN_WEIGHT>10 lbs</DISPLAY_TUN_WEIGHT>
+ <DISPLAY_TOP_UP_WATER>0.00 gal</DISPLAY_TOP_UP_WATER>
+ <DISPLAY_TRUB_CHILLER_LOSS>0.50 gal</DISPLAY_TRUB_CHILLER_LOSS>
+ <DISPLAY_LAUTER_DEADSPACE>0.38 gal</DISPLAY_LAUTER_DEADSPACE>
+ <DISPLAY_TOP_UP_KETTLE>0.00 gal</DISPLAY_TOP_UP_KETTLE>
+</EQUIPMENT>
+
+ <MASH>
+ <NAME>Temperature Mash, 2 Step, Light Body</NAME>
+ <VERSION>1</VERSION>
+ <GRAIN_TEMP>22.2222222</GRAIN_TEMP>
+ <TUN_TEMP>22.2222222</TUN_TEMP>
+ <SPARGE_TEMP>75.5555556</SPARGE_TEMP>
+ <PH>5.4000000</PH>
+ <TUN_WEIGHT>160.0000000</TUN_WEIGHT>
+ <TUN_SPECIFIC_HEAT>0.3000000</TUN_SPECIFIC_HEAT>
+ <EQUIP_ADJUST>TRUE</EQUIP_ADJUST>
+ <NOTES>Two step profile with a protein rest for mashes with unmodified grains or adjuncts.  Temperature mash for use when mashing in a brew pot over a heat source such as the stove.  Use heat to maintain desired temperature during the mash.</NOTES>
+ <DISPLAY_GRAIN_TEMP>72.0 F</DISPLAY_GRAIN_TEMP>
+ <DISPLAY_TUN_TEMP>72.0 F</DISPLAY_TUN_TEMP>
+ <DISPLAY_SPARGE_TEMP>168.0 F</DISPLAY_SPARGE_TEMP>
+ <DISPLAY_TUN_WEIGHT>10 lbs</DISPLAY_TUN_WEIGHT>
+<MASH_STEPS>
+<MASH_STEP>
+ <NAME>Protein Rest</NAME>
+ <VERSION>1</VERSION>
+ <TYPE>Infusion</TYPE>
+ <INFUSE_AMOUNT>25.5516768</INFUSE_AMOUNT>
+ <STEP_TIME>20.0000000</STEP_TIME>
+ <STEP_TEMP>54.4444444</STEP_TEMP>
+ <RAMP_TIME>2.0000000</RAMP_TIME>
+ <END_TEMP>54.4444444</END_TEMP>
+ <DESCRIPTION>Add 27.00 qt of water at 140.1 F</DESCRIPTION>
+ <WATER_GRAIN_RATIO>1.500 qt/lb</WATER_GRAIN_RATIO>
+ <DECOCTION_AMT>0.00 qt</DECOCTION_AMT>
+ <INFUSE_TEMP>140.1 F</INFUSE_TEMP>
+ <DISPLAY_STEP_TEMP>130.0 F</DISPLAY_STEP_TEMP>
+ <DISPLAY_INFUSE_AMT>27.00 qt</DISPLAY_INFUSE_AMT>
+</MASH_STEP>
+<MASH_STEP>
+ <NAME>Saccharification</NAME>
+ <VERSION>1</VERSION>
+ <TYPE>Temperature</TYPE>
+ <INFUSE_AMOUNT>0.0000000</INFUSE_AMOUNT>
+ <STEP_TIME>45.0000000</STEP_TIME>
+ <STEP_TEMP>65.5555556</STEP_TEMP>
+ <RAMP_TIME>15.0000000</RAMP_TIME>
+ <END_TEMP>65.5555556</END_TEMP>
+ <DESCRIPTION>Heat to 150.0 F over 15 min</DESCRIPTION>
+ <WATER_GRAIN_RATIO>1.500 qt/lb</WATER_GRAIN_RATIO>
+ <DECOCTION_AMT>0.00 qt</DECOCTION_AMT>
+ <INFUSE_TEMP>150.0 F</INFUSE_TEMP>
+ <DISPLAY_STEP_TEMP>150.0 F</DISPLAY_STEP_TEMP>
+ <DISPLAY_INFUSE_AMT>0.00 qt</DISPLAY_INFUSE_AMT>
+</MASH_STEP>
+<MASH_STEP>
+ <NAME>Mash Out</NAME>
+ <VERSION>1</VERSION>
+ <TYPE>Temperature</TYPE>
+ <INFUSE_AMOUNT>0.0000000</INFUSE_AMOUNT>
+ <STEP_TIME>10.0000000</STEP_TIME>
+ <STEP_TEMP>76.6666667</STEP_TEMP>
+ <RAMP_TIME>10.0000000</RAMP_TIME>
+ <END_TEMP>76.6666667</END_TEMP>
+ <DESCRIPTION>Heat to 170.0 F over 10 min</DESCRIPTION>
+ <WATER_GRAIN_RATIO>1.500 qt/lb</WATER_GRAIN_RATIO>
+ <DECOCTION_AMT>0.00 qt</DECOCTION_AMT>
+ <INFUSE_TEMP>170.0 F</INFUSE_TEMP>
+ <DISPLAY_STEP_TEMP>170.0 F</DISPLAY_STEP_TEMP>
+ <DISPLAY_INFUSE_AMT>0.00 qt</DISPLAY_INFUSE_AMT>
+</MASH_STEP>
+</MASH_STEPS>
+
+</MASH>
+
+ <NOTES></NOTES>
+ <TASTE_NOTES></TASTE_NOTES>
+ <TASTE_RATING>30.0000000</TASTE_RATING>
+ <OG>1.0460000</OG>
+ <FG>1.0100000</FG>
+ <CARBONATION>2.3000000</CARBONATION>
+ <FERMENTATION_STAGES>2</FERMENTATION_STAGES>
+ <PRIMARY_AGE>4.0000000</PRIMARY_AGE>
+ <PRIMARY_TEMP>19.4444444</PRIMARY_TEMP>
+ <SECONDARY_AGE>10.0000000</SECONDARY_AGE>
+ <SECONDARY_TEMP>19.4444444</SECONDARY_TEMP>
+ <TERTIARY_AGE>7.0000000</TERTIARY_AGE>
+ <AGE>30.0000000</AGE>
+ <AGE_TEMP>18.3333333</AGE_TEMP>
+ <CARBONATION_USED>Bottle with 8.64 oz Corn Sugar</CARBONATION_USED>
+ <FORCED_CARBONATION>TRUE</FORCED_CARBONATION>
+ <PRIMING_SUGAR_NAME>Corn Sugar</PRIMING_SUGAR_NAME>
+ <PRIMING_SUGAR_EQUIV>1.0000000</PRIMING_SUGAR_EQUIV>
+ <KEG_PRIMING_FACTOR>0.5000000</KEG_PRIMING_FACTOR>
+ <CARBONATION_TEMP>21.1111111</CARBONATION_TEMP>
+ <DISPLAY_CARB_TEMP>70.0 F</DISPLAY_CARB_TEMP>
+ <DATE>22 Apr 2017</DATE>
+ <EST_OG>1.045 SG</EST_OG>
+ <EST_FG>1.011 SG</EST_FG>
+ <EST_COLOR>32.8 SRM</EST_COLOR>
+ <IBU>39.3 IBUs</IBU>
+ <IBU_METHOD>Tinseth</IBU_METHOD>
+ <EST_ABV>4.5 %</EST_ABV>
+ <ABV>4.7 %</ABV>
+ <ACTUAL_EFFICIENCY>37.0 %</ACTUAL_EFFICIENCY>
+ <CALORIES>151.6 kcal/12oz</CALORIES>
+ <DISPLAY_BATCH_SIZE>11.00 gal</DISPLAY_BATCH_SIZE>
+ <DISPLAY_BOIL_SIZE>13.48 gal</DISPLAY_BOIL_SIZE>
+ <DISPLAY_OG>1.046 SG</DISPLAY_OG>
+ <DISPLAY_FG>1.010 SG</DISPLAY_FG>
+ <DISPLAY_PRIMARY_TEMP>67.0 F</DISPLAY_PRIMARY_TEMP>
+ <DISPLAY_SECONDARY_TEMP>67.0 F</DISPLAY_SECONDARY_TEMP>
+ <DISPLAY_TERTIARY_TEMP>65.0 F</DISPLAY_TERTIARY_TEMP>
+ <DISPLAY_AGE_TEMP>65.0 F</DISPLAY_AGE_TEMP>
+</RECIPE>
+</RECIPES>
