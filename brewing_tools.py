@@ -71,6 +71,11 @@ class BeerXMLParser(object):
         self.boil_time = self.recipe.find('BOIL_TIME').text.split('.')[0]
         self.brew_type = self.recipe.find('TYPE').text
 
+        self.volume = ("{:.2f}".format(float(self.recipe.find
+                        ('BATCH_SIZE').text) * .264172))
+        self.og = self.recipe.find('EST_OG').text.split()[0]
+        self.abv = self.recipe.find('EST_ABV').text.split()[0]
+
         self.set_mash_steps()
         self.set_hops()
 
@@ -175,11 +180,26 @@ class BeerXMLParser(object):
         return self.brew_type
 
 
+    def get_batch_volume(self):
+        ''' returns batch six in gallons as a string '''
+        return self.volume
+
+
+    def get_og(self):
+        ''' returns the estimated original gravity as a string '''
+        return self.og
+
+
+    def get_abv(self):
+        ''' returns the estimated alcohol by volume as a string '''
+        return self.abv
+
+
 
 
 # tests
 if __name__ == '__main__':
-    fpath = 'C:/Users/Todd/Desktop/brewweb/recipes/Oktober-16.xml'
+    fpath = 'C:\Users\Todd\Desktop\code\\brewapp\\recipes\Furious.xml'
     xml = BeerXMLParser()
     xml.set_XML(fpath)
     mash = xml.get_mash_steps()
@@ -191,13 +211,6 @@ if __name__ == '__main__':
     boilt = xml.get_boil_time()
     btype =  xml.get_brew_type()
 
-    #print mash
-    #print boilh
-    #print fw
-    #print dh
-    #print get_all
-    #print recipe
-    #print boilt
-    #print btype
+
     #get_all['recipe_name'] = recipe
-    print get_all
+    print xml.get_batch_volume(), xml.get_og(), xml.get_abv()

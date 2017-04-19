@@ -6,13 +6,13 @@ import json
 from brewing_tools import BeerXMLParser
 
 app = Flask(__name__)
-# Timer object for setting our xml data
+# Object brewing_tools for setting our xml data
 recipe_data = BeerXMLParser()
-# may move this locally to the recipes view
 FPATH = os.getcwd() +'//recipes//'
-# default value has to be a dict with some value
+# default value for recipe name
 recipe_name = {'recipe':"no recipe"}
 
+# cache buster
 def new_url():
     query = random.randint(100000000, 999999999)
     return '?q={}'.format(query)
@@ -22,16 +22,23 @@ def get_xml(name):
     try:
         path = FPATH + name + ".xml"
         recipe_data.set_XML(path)
-        all_steps = recipe_data.get_all_steps()
+        all_data = recipe_data.get_all_steps()
         recipe = recipe_data.get_recipe_name()
-        all_steps['recipe_name'] = recipe
+        all_data['recipe_name'] = recipe
         boil_time = recipe_data.get_boil_time()
-        all_steps['boil_time'] = boil_time
+        all_data['boil_time'] = boil_time
+        batch_volume = recipe_data.get_batch_volume()
+        all_data['volume'] = batch_volume
+        og = recipe_data.get_og()
+        all_data['og'] = og
+        abv = recipe_data.get_abv()
+        all_data['abv'] = abv
+
 
     except IOError:
-        all_steps = {}
+        all_data = {}
 
-    return all_steps
+    return all_data
 
 
 @app.route('/')
@@ -85,4 +92,4 @@ def saverecipe():
 
 
 
-app.run(debug=True, port=8000, host='0.0.0.0')
+app.run(debug=False, port=8000, host='0.0.0.0')
