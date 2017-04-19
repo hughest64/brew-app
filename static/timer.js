@@ -27,7 +27,7 @@ function setTimer() {
             (Math.abs(Math.floor(hr.value)) * 3600000) +
             (Math.abs(Math.floor(mn.value)) * 60000) +
             (Math.abs(Math.floor(sec.value * 1000))) + 450
-        );
+        )
         var resetTime = remainingTime;
         localStorage['remainingTime'] = remainingTime;
         localStorage['resetTime'] = resetTime;
