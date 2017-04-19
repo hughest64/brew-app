@@ -9,10 +9,10 @@ some todo:
   - basically dump everything from localStorage.
 
 beer xml gets:
-  *** there are many cool things in the <NOTES> element of a beer msl file ***
-  - ABV *
-  - est OG *
-  - batch size *
+  *** there are many cool things in the <NOTES> element of a beer xml file ***
+  - ABV * CHECK
+  - est OG * CHECK
+  - batch size * CHECK
 
   - pre boil grav
   - pre boil vol

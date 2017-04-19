@@ -22,9 +22,9 @@
 {% block header %}
     <h2 class="name" id="recipeName"></h2>
     <ul class="recipe-details">
-        <li>Vol: 11 gal</li>
-        <li>OG: 1.060</li>
-        <li>ABV: 6.0%</li>
+        <li>Vol: {{ data['volume'] }} gal</li>
+        <li>OG: {{ data['og'] }}</li>
+        <li>ABV: {{ data['abv'] }}%</li>
     </ul>
 {% endblock %}
 <!-- nav content is included here from layout.html -->

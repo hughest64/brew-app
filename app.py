@@ -22,16 +22,23 @@ def get_xml(name):
     try:
         path = FPATH + name + ".xml"
         recipe_data.set_XML(path)
-        all_steps = recipe_data.get_all_steps()
+        all_data = recipe_data.get_all_steps()
         recipe = recipe_data.get_recipe_name()
-        all_steps['recipe_name'] = recipe
+        all_data['recipe_name'] = recipe
         boil_time = recipe_data.get_boil_time()
-        all_steps['boil_time'] = boil_time
+        all_data['boil_time'] = boil_time
+        batch_volume = recipe_data.get_batch_volume()
+        all_data['volume'] = batch_volume
+        og = recipe_data.get_og()
+        all_data['og'] = og
+        abv = recipe_data.get_abv()
+        all_data['abv'] = abv
+
 
     except IOError:
-        all_steps = {}
+        all_data = {}
 
-    return all_steps
+    return all_data
 
 
 @app.route('/')
