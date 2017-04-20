@@ -1,3 +1,4 @@
+// This will have other content once setting a manual timer is a modal !!!
 function setNewTimer() {
     if (hr.value || mn.value || sec.value) {
         // the 450 ds a bump to ms and keeps the timer from skipping
