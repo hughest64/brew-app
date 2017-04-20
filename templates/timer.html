@@ -63,12 +63,17 @@
         </div>
     </section>
     <!-- working on making this a modal!!! -->
-    <footer>
+    <footer class="clearfix">
+        <h2>Set a Timer</h2>
+        <button>set</button>
+    </footer>
+
+    <div class="set-timer">
         <h3>Set a Manual Timer</h3>
         <input id="hr" type="number" min="0" max="90" placeholder="HH">
         <input id="mn" type="number" min="0" max="90" placeholder="MM">
         <input id="sec" type="number" min="0" max="59" placeholder="SS">
         <button type="submit" id="save" onclick="setTimer()">Save</button>
-    </footer>
+    </div>
     <script src="/static/timer.js{{ query }}"></script>
 {% endblock %}

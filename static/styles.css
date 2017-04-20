@@ -23,8 +23,7 @@ a:hover {
 }
 
 /**** temporary!!! ****/
-footer,
-.timer-set {
+.set-timer {
     display: none;
 }
 
@@ -91,6 +90,8 @@ CONTENT
     /*width: 90%;
     margin: 0 auto;*/
     padding-top: 20px;
+    min-height: calc(100vh - 173px);
+    /*152.6px*/
 }
 
 .timer-container,
@@ -150,3 +151,40 @@ CONTENT
     /*font-family: 'Roboto Condensed', sans-serif;*/
     font-weight: 400;
 }
+
+
+
+/***********************************************
+FOOTER
+************************************************/
+
+footer {
+    background-color: #003b6f;+
+    margin: 0;
+    padding: 10px 20px;
+}
+
+footer h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+    float: left;
+    margin-top: 2px;
+}
+
+footer button {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+/***********************************************
+TIMER MODAL
+************************************************/
