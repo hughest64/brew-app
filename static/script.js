@@ -13,3 +13,24 @@ function setNewTimer() {
         localStorage['newTimer'] = 'true';
     }
 }
+
+
+///////////////////////////////////////////
+// the clickable text
+var set = document.getElementById('set-text');
+// the modal div
+var modal = document.getElementById('timer-modal');
+// the "x" for closing the modal
+var span = document.getElementsByClassName('close');
+
+set.onclick = function() {
+    modal.style.display = 'block';
+}
+
+span.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// window.onclick = function() {
+//     modal.style.display = 'none'
+// }
