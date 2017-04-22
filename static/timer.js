@@ -8,7 +8,26 @@ var steps = localStorage['steps'];
 var hop_adds = localStorage['hop_adds'];
 var hopKeys = Object.keys(JSON.parse(hop_adds));
 
+var set = document.getElementById('set-text');
+var modal = document.getElementById('timer-modal');
+var span = document.getElementsByClassName('close');
 
+
+set.onclick = function() {
+    modal.style.display = 'block';
+}
+
+// span.onclick = function() {
+//     modal.style.display = 'none';
+// }
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+////////////////////////////////////////////////////////
 function hopCheck(time) {
     var sec = Math.floor(time / 1000);
     if (current_step.innerHTML == 'Boil' &&
@@ -20,6 +39,7 @@ function hopCheck(time) {
 function setTimer() {
     // if a timer is running, stop it
     stopTimer();
+    modal.style.display = 'none';
     // we only set the timer if there is some value to set
     if (hr.value || mn.value || sec.value) {
         // the 450 adds a bump to ms and keeps the timer from skipping

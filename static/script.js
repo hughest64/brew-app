@@ -20,17 +20,9 @@ function setNewTimer() {
 var set = document.getElementById('set-text');
 // the modal div
 var modal = document.getElementById('timer-modal');
-// the "x" for closing the modal
-var span = document.getElementsByClassName('close');
+
 
 set.onclick = function() {
     modal.style.display = 'block';
+    // alert('testing 1, 2, 3')
 }
-
-span.onclick = function() {
-    modal.style.display = 'none';
-}
-
-// window.onclick = function() {
-//     modal.style.display = 'none'
-// }
