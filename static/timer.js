@@ -10,16 +10,16 @@ var hopKeys = Object.keys(JSON.parse(hop_adds));
 
 var set = document.getElementById('set-text');
 var modal = document.getElementById('timer-modal');
-var span = document.getElementsByClassName('close');
+var span = document.getElementsByClassName('close')[0];
 
 
 set.onclick = function() {
     modal.style.display = 'block';
 }
 
-// span.onclick = function() {
-//     modal.style.display = 'none';
-// }
+span.onclick = function() {
+    modal.style.display = 'none';
+}
 
 window.onclick = function(event) {
     if (event.target == modal) {
