@@ -24,6 +24,13 @@ function currentMashStep() {
         }
     }
 }
+// this needs work and shold maybe move to a script in the html;
+for (var i = 0; i < mashSteps.length; i++) {
+    mashSteps[i].onclick = function(){
+        console.log('i is always == to len(mashSteps)')
+        // set the index and call nextTimer();
+    }
+}
 
 set.onclick = function() {
     modal.style.display = 'block';
