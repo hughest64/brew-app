@@ -46,7 +46,9 @@
             <h3 class="container-heading">Mash Steps</h3>
             <ul>
                 {% for step in range(data['mash'] | length) %}
-                <li>{{ "{0} - {2}".format(*data['mash'][step]) }} &deg; {{ " for {1} minutes".format(*data['mash'][step]) }}</li>
+                <li id="mash-step-{{ loop.index0 }}" class="mash-step">
+                    {{ "{0} - {2}".format(*data['mash'][step]) }} &deg; {{ " for {1} minutes".format(*data['mash'][step]) }}
+                </li>
                 {% endfor %}
             </ul>
         </div>

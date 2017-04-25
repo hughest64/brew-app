@@ -12,6 +12,18 @@ var set = document.getElementById('set-text');
 var modal = document.getElementById('timer-modal');
 var span = document.getElementsByClassName('close')[0];
 
+var mashSteps = document.getElementsByClassName('mash-step');
+
+function currentMashStep() {
+    for (var i=0; i < mashSteps.length; i++) {
+        if (i == Number(localStorage['stepIndex'])) {
+            mashSteps[i].style.color = "#b3dbff";
+        }
+        else {
+            mashSteps[i].style.color = "#fff";
+        }
+    }
+}
 
 set.onclick = function() {
     modal.style.display = 'block';
@@ -135,8 +147,10 @@ function nextTimer() {
         mn.value = (parsed[index][1])
         localStorage['stepIndex'] = index;
         setTimer();
+        currentMashStep();
     }
 }
+
 
 if (localStorage['recipeLoaded']) {
     recipeName.innerHTML = localStorage['recipeName']
@@ -149,5 +163,6 @@ if (localStorage['recipeLoaded']) {
     var parsed = JSON.parse(steps);
     recipeName.innerHTML = localStorage['recipeName']
     current_step.innerHTML = parsed[index][0];
+    currentMashStep();
     runTimer();
 }

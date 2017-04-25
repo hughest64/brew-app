@@ -147,6 +147,10 @@ CONTENT
     font-weight: 400;
 }
 
+.mash-step:hover {
+    text-decoration: underline;
+}
+
 
 
 /***********************************************
