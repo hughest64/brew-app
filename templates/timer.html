@@ -53,7 +53,9 @@
         </div>
         {# list of boil additions #}
         <div class="container">
-            <h3 class="container-heading">Boil Additons</h3>
+            <h3 id="boil-adds-{{ data['mash'] | length }}" class="container-heading boil-adds" onclick="goToStep(this.id)">
+                Boil Additons
+            </h3>
             <ul>
                 {% for hops in data['boil'] | sort(reverse=True) %}
                     {% for hop in data['boil'][hops] %}
