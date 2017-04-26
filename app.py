@@ -20,6 +20,7 @@ def new_url():
 
 def get_xml(name):
     try:
+        #!!! all of the things should come in one lump from brewing_tools
         path = FPATH + name + ".xml"
         recipe_data.set_XML(path)
         all_data = recipe_data.get_all_steps()
@@ -91,5 +92,5 @@ def saverecipe():
 
 
 
-
-app.run(debug=False, port=8000, host='0.0.0.0')
+if __name__ == "__main__":
+    app.run(debug=True, port=8000, host='0.0.0.0')

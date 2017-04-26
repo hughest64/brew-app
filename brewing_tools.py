@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 
 # NOTE - This class may not be functional as is. It needs dev work and testing.
+# !!!fix or deprecate this
 class BrewTimer(object):
     """ a collection of timer controls for a brewing system."""
     def __init__(self, mn=0, sec=0):
@@ -51,6 +52,9 @@ class BeerXMLParser(object):
         self.recipe_name = ''
         self.boil_time = ''
         self.brew_type = ''
+        self.batch_volume = ''
+        self.og = ''
+        self.abv = ''
 
         self.mash_steps = []
         self.first_wort = []
@@ -59,12 +63,12 @@ class BeerXMLParser(object):
         self.all_steps = {}
 
 
-    def set_XML(self, fp):
+    def set_XML(self, path):
         ''' Sets up the root of a specified xml document and calls
         functions to get some data. Call with the full file path to
         a beer.xml doucment
         '''
-        self.tree = ET.parse(fp)
+        self.tree = ET.parse(path)
         # the <RECIPE> element of the tree contains all of the data we want
         self.recipe = self.tree.getroot()[0]
         self.recipe_name = self.recipe.find('NAME').text
@@ -154,7 +158,7 @@ class BeerXMLParser(object):
         ''' returns the list of dry hops '''
         return self.dry_hop
 
-
+    # !!!change name to get_all and add all of the things we need here
     def get_all_steps(self):
         ''' Returns a dict of all brew day mand and boil
         steps and the associated values as strings.
@@ -194,10 +198,13 @@ class BeerXMLParser(object):
         ''' returns the estimated alcohol by volume as a string '''
         return self.abv
 
+# !!! add class for bsmx files (hopefully this can inherit from BeerXMLParser
+#     and we shold only need to redo the set methods with new tags)
 
 
 
-# tests
+
+# tests (!!!move tests to a separate file?)
 if __name__ == '__main__':
     fpath = 'C:\Users\Todd\Desktop\code\\brewapp\\recipes\Furious.xml'
     xml = BeerXMLParser()

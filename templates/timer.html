@@ -12,8 +12,7 @@
             localStorage['hop_adds'] = hop_adds
             localStorage['steps'] = steps;
             localStorage['recipeName'] = "{{ data['recipe_name'] }}";
-            // set this to -1 so that nextTimer() will set a 0 index when the script loads
-            localStorage['stepIndex'] = '-1';
+            localStorage['stepIndex'] = '0';
             localStorage['recipeLoaded'] = "true";
         }
         </script>
@@ -34,11 +33,11 @@
             <h3 class="container-heading" id="current_step"></h3>
             <h1 class="timer-display" id="timer">00:00</h1>
             <div class="timer-buttons">
-                <button onclick="startTimer()" id="start">start</button>
-                <button onclick="stopTimer()" id="stop">stop</button>
+                <button onclick="startTimer()" id="start">Start</button>
+                <button onclick="stopTimer()" id="stop">Stop</button>
                 <button onclick="resetTimer()" id="reset">Reset</button>
                 <button onclick="clearTimer()" id="clear">Clear</button>
-                <button onclick="nextTimer()" id="next">Next</button>
+                <button id="next">Next</button>
             </div>
         </div>
         {# list of mash steps #}
@@ -46,7 +45,9 @@
             <h3 class="container-heading">Mash Steps</h3>
             <ul>
                 {% for step in range(data['mash'] | length) %}
-                <li>{{ "{0} - {2}".format(*data['mash'][step]) }} &deg; {{ " for {1} minutes".format(*data['mash'][step]) }}</li>
+                <li id="mash-step-{{ loop.index0 }}" class="mash-step" onclick="goToStep(this.id)">
+                    {{ "{0} - {2}".format(*data['mash'][step]) }} &deg; {{ " for {1} minutes".format(*data['mash'][step]) }}
+                </li>
                 {% endfor %}
             </ul>
         </div>
@@ -61,13 +62,22 @@
                 {% endfor %}
             </ul>
         </div>
+        <div class="modal" id="timer-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Set a Timer</h3>
+                <input id="hr" type="number" min="0" max="90" placeholder="HH">
+                <input id="mn" type="number" min="0" max="90" placeholder="MM">
+                <input id="sec" type="number" min="0" max="59" placeholder="SS">
+                <button type="submit" id="save" onclick="setTimer()">Save</button>
+            </div>
+        </div>
     </section>
-    <footer>
-        <h3>Set a Manual Timer</h3>
-        <input id="hr" type="number" min="0" max="90" placeholder="HH">
-        <input id="mn" type="number" min="0" max="90" placeholder="MM">
-        <input id="sec" type="number" min="0" max="59" placeholder="SS">
-        <button type="submit" id="save" onclick="setTimer()">Save</button>
+
+    <footer class="">
+        <h2 id="set-text">Set a Timer</h2>
     </footer>
+
     <script src="/static/timer.js{{ query }}"></script>
+    <!-- <script src="/static/script.js{{ query }}"></script> -->
 {% endblock %}
