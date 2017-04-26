@@ -12,8 +12,7 @@
             localStorage['hop_adds'] = hop_adds
             localStorage['steps'] = steps;
             localStorage['recipeName'] = "{{ data['recipe_name'] }}";
-            // set this to -1 so that nextTimer() will set a 0 index when the script loads
-            localStorage['stepIndex'] = '-1';
+            localStorage['stepIndex'] = '0';
             localStorage['recipeLoaded'] = "true";
         }
         </script>
@@ -38,7 +37,7 @@
                 <button onclick="stopTimer()" id="stop">Stop</button>
                 <button onclick="resetTimer()" id="reset">Reset</button>
                 <button onclick="clearTimer()" id="clear">Clear</button>
-                <button onclick="nextTimer()" id="next">Next</button>
+                <button id="next">Next</button>
             </div>
         </div>
         {# list of mash steps #}
@@ -46,7 +45,7 @@
             <h3 class="container-heading">Mash Steps</h3>
             <ul>
                 {% for step in range(data['mash'] | length) %}
-                <li id="mash-step-{{ loop.index0 }}" class="mash-step">
+                <li id="mash-step-{{ loop.index0 }}" class="mash-step" onclick="goToStep(this.id)">
                     {{ "{0} - {2}".format(*data['mash'][step]) }} &deg; {{ " for {1} minutes".format(*data['mash'][step]) }}
                 </li>
                 {% endfor %}

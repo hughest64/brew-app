@@ -18,17 +18,20 @@ function currentMashStep() {
     for (var i=0; i < mashSteps.length; i++) {
         if (i == Number(localStorage['stepIndex'])) {
             mashSteps[i].style.color = "#b3dbff";
+            mashSteps[i].style.fontWeight = "bold";
         }
         else {
             mashSteps[i].style.color = "#fff";
+            mashSteps[i].style.fontWeight = "normal";
         }
     }
 }
-// this needs work and shold maybe move to a script in the html;
-for (var i = 0; i < mashSteps.length; i++) {
-    mashSteps[i].onclick = function(){
-        console.log('i is always == to len(mashSteps)')
-        // set the index and call nextTimer();
+
+function goToStep(clicked_id) {
+    var id = clicked_id.slice(-1);
+    if (id != localStorage['stepIndex']) {
+        localStorage['stepIndex'] = id;
+        nextTimer();
     }
 }
 
@@ -89,10 +92,10 @@ function runTimer() {
         if (remainingTime > 999) {
             timer = setTimeout(runTimer, 1000);
         } else {
-            // make values falsey
             localStorage['isRunning'] = '';
             localStorage['remainingTime'] = '';
             localStorage['resetTime'] = '';
+            localStorage['stepIndex'] = Number(localStorage['stepIndex']) + 1;
             nextTimer();
         }
     }
@@ -147,7 +150,6 @@ function clearTimer() {
 function nextTimer() {
     var index = Number(localStorage['stepIndex']);
     var parsed = JSON.parse(steps);
-    index ++;
     if (localStorage['stepIndex'] && index < (parsed.length)) {
         stopTimer();
         current_step.innerHTML = parsed[index][0];
@@ -158,6 +160,10 @@ function nextTimer() {
     }
 }
 
+next.onclick = function() {
+    localStorage['stepIndex'] = Number(localStorage['stepIndex']) + 1;
+    nextTimer();
+}
 
 if (localStorage['recipeLoaded']) {
     recipeName.innerHTML = localStorage['recipeName']
