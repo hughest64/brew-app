@@ -70,6 +70,10 @@ header,
     font-weight: bold;
 }
 
+.current-page {
+    color: #b3dbff;
+}
+
 .recipe-details li:last-child {
     border: none;
 }

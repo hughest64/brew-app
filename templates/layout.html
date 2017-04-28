@@ -20,14 +20,24 @@
     </head>
     <body>
         <header>{% block header %}{% endblock %}</header>
+        {% block nav %}
         <nav class="main-nav">
             <ul class="main-nav-list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/timer">Timer</a></li>
-                <li><a href="/recipes">Recipes</a></li>
-                <li><a href="/set">Set</a></li>
+                <li><a href="/" {% if request.path == "/" %}
+                    class="current-page" {% endif %}>Home</a>
+                </li>
+                <li><a href="/timer" {% if request.path == "/timer" %}
+                     class="current-page" {% endif %}>Timer</a>
+                </li>
+                <li><a href="/recipes" {% if request.path == "/recipes" %}
+                    class="current-page" {% endif %}>Recipes</a>
+                </li>
+                <li><a href="/set" {% if request.path == "/set" %}
+                    class="current-page" {% endif %}>Set</a>
+                </li>
             </ul>
         </nav>
+        {% endblock %}
         {% block content %}{% endblock %}
     </body>
 </html>
