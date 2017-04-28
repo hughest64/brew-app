@@ -51,10 +51,10 @@ def index():
     return render_template('index.html', data=data, **extension)
 
 
-@app.route('/set')
-def set():
+@app.route('/stats')
+def stats():
     query = new_url()
-    return render_template('set.html', query=query)
+    return render_template('stats.html', query=query)
 
 
 @app.route('/timer')
