@@ -89,7 +89,8 @@ CONTENT
     /*width: 90%;
     margin: 0 auto;  173px*/
     padding-top: 20px;
-    min-height: calc(100vh - 172.5px);
+    min-height: calc(100vh - 148px);
+    /*172.5px*/
     /*152.6px*/
 }
 
