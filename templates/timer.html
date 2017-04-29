@@ -28,8 +28,8 @@
 {% endblock %}
 <!-- nav content is included here from layout.html -->
 {% block content %}
-    <section class="wrapper">
-        <div class="timer-container">
+    <main class="wrapper">
+        <section class="timer-container">
             <h3 class="container-heading" id="current_step"></h3>
             <h1 class="timer-display" id="timer">00:00</h1>
             <div class="timer-buttons">
@@ -40,9 +40,9 @@
                 <!-- <button onclick="clearTimer()" id="clear">Clear</button> -->
                 <button id="next">Next</button>
             </div>
-        </div>
+        </section>
         {# list of mash steps #}
-        <div class="container">
+        <section class="container">
             <h3 class="container-heading">Mash Steps</h3>
             <ul>
                 {% for step in range(data['mash'] | length) %}
@@ -51,9 +51,9 @@
                 </li>
                 {% endfor %}
             </ul>
-        </div>
+        </section>
         {# list of boil additions #}
-        <div class="container">
+        <section class="container">
             <h3 id="boil-adds-{{ data['mash'] | length }}" class="container-heading boil-adds" onclick="goToStep(this.id)">
                 Boil - {{ data['boil_time'] }} minutes
             </h3>
@@ -64,19 +64,19 @@
                     {% endfor %}
                 {% endfor %}
             </ul>
-        </div>
+        </section>
+    </main>
 
-        <div class="modal" id="timer-modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3>Set a Timer</h3>
-                <input id="hr" type="number" min="0" max="90" placeholder="HH">
-                <input id="mn" type="number" min="0" max="90" placeholder="MM">
-                <input id="sec" type="number" min="0" max="59" placeholder="SS">
-                <button type="submit" id="save" onclick="setTimer()">Save</button>
-            </div>
+    <aside class="modal" id="timer-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Set a Timer</h3>
+            <input id="hr" type="number" min="0" max="90" placeholder="HH">
+            <input id="mn" type="number" min="0" max="90" placeholder="MM">
+            <input id="sec" type="number" min="0" max="59" placeholder="SS">
+            <button type="submit" id="save" onclick="setTimer()">Save</button>
         </div>
-    </section>
+    </aside>
 {% endblock %}
 {% block footer %}
     <h2 id="set-text">Set a Timer</h2>

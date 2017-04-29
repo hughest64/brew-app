@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>{% block title %}Brew Some Beer!{% endblock %}</title>
+        <title>{% block title %}Let's Brew!{% endblock %}</title>
         <!-- favicon -->
         <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon-16x16.png">
         <link rel="apple-touch-icon" sizes="180x180" href="/static/img//apple-touch-icon.png">
@@ -39,8 +39,7 @@
         </nav>
         {% endblock %}
         {% block content %}{% endblock %}
-
-        <footer class="">{% block footer %}<h2 id="set-text">I'm a footer!</h2>{% endblock %}</footer>
+        <footer>{% block footer %}<h2 id="set-text"></h2>{% endblock %}</footer>
         <!-- <script src="/static/index.js{{ query }}"></script> -->
     </body>
 </html>
