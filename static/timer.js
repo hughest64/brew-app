@@ -58,10 +58,19 @@ function hopCheck(time) {
     }
 }
 
+function xtraTime(h, m) {
+    hr.value = h;
+    mn.value = m;
+    current_step.innerHTML = 'timer';
+    // localStorage['stepIndex'] = JSON.parse
+    localStorage['stepIndex'] = JSON.parse(steps).length + 1;
+    setTimer();
+    modal.style.display = 'none';
+}
+
 function setTimer() {
     // if a timer is running, stop it
     stopTimer();
-    modal.style.display = 'none';
     // we only set the timer if there is some value to set
     if (hr.value || mn.value || sec.value) {
         // the 450 adds a bump to ms and keeps the timer from skipping

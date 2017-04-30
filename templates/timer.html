@@ -5,7 +5,7 @@
         <script>
         if ( "{{ data['recipe_name'] }}" != localStorage['recipeName']) {
             var steps = {{ data['mash'] | tojson }};
-            var boil_time = [ 'Boil', {{ data['boil_time'] }} ]; // this is just the value
+            var boil_time = [ 'Boil - {{ data['boil_time'] }} minutes' ]; // this is just the value
             steps.push(boil_time);
             var steps = JSON.stringify(steps);
             var hop_adds = JSON.stringify({{ data['boil'] | tojson }})
@@ -70,11 +70,17 @@
     <aside class="modal" id="timer-modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3>Set a Timer</h3>
-            <input id="hr" type="number" min="0" max="90" placeholder="HH">
-            <input id="mn" type="number" min="0" max="90" placeholder="MM">
-            <input id="sec" type="number" min="0" max="59" placeholder="SS">
-            <button type="submit" id="save" onclick="setTimer()">Save</button>
+            <h3>SET A TIMER</h3>
+            <div class="modal-content-button">
+                <button type="submit" id="save10" onclick="xtraTime(0, 10)">10 min</button>
+                <button type="submit" id="save5" onclick="xtraTime(0, 5)">5 min</button>
+            </div>
+            <div class="modal-content-time">
+                <input id="hr" type="number" min="0" max="90" placeholder="HH">
+                <input id="mn" type="number" min="0" max="90" placeholder="MM">
+                <input hidden id="sec" type="number" min="0" max="59" placeholder="SS">
+                <button type="submit" id="save" onclick="xtraTime(hr.value, mn.value)">Save</button>
+            </div>
         </div>
     </aside>
 {% endblock %}
