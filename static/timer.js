@@ -58,9 +58,9 @@ function hopCheck(time) {
     }
 }
 
-function xtraTime(h, m) {
-    hr.value = h;
-    mn.value = m;
+function xtraTime(hour, minute) {
+    hr.value = hour;
+    mn.value = minute;
     current_step.innerHTML = 'timer';
     // localStorage['stepIndex'] = JSON.parse
     localStorage['stepIndex'] = JSON.parse(steps).length + 1;
@@ -83,6 +83,8 @@ function setTimer() {
         localStorage['remainingTime'] = remainingTime;
         localStorage['resetTime'] = resetTime;
         formatDisplay(remainingTime);
+        hr.value = "";
+        mn.value = "";
     }
 }
 
@@ -110,16 +112,16 @@ function runTimer() {
     }
 }
 
-function formatDisplay(t) {
-    var h = Math.floor(t/3600000);
-    var m = Math.floor(t/60000) % 60;
-    var s = Math.floor(t/1000) % 60;
+function formatDisplay(time) {
+    var hour = Math.floor(time/3600000);
+    var minute = Math.floor(time/60000) % 60;
+    var second = Math.floor(time/1000) % 60;
 
-    var displayHr = "0" + h;
-    var displayMn = "0" + m;
-    var displaySec = "0" + s;
+    var displayHr = "0" + hour;
+    var displayMn = "0" + minute;
+    var displaySec = "0" + second;
 
-    if (h > 0) {
+    if (hour > 0) {
         display.innerHTML = displayHr.slice(-2) + ":" + displayMn.slice(-2) + ":" + displaySec.slice(-2);
     } else {
         display.innerHTML = displayMn.slice(-2) + ":" + displaySec.slice(-2);
