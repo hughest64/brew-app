@@ -235,18 +235,32 @@ TIMER MODAL
 }
 
 .modal-content h3 {
-    margin: 0;
+    margin: 0 0 0 5%;
     padding-bottom: 10px;
 }
 
 
 .modal-content-button {
+    margin: 0 0 0 5%;
     display: inline;
 
     padding-bottom: 10px;
 }
 
+.modal-content button {
+    border: none;
+    background-color: #fff;
+    color: #000;
+    margin: 0 3px;
+    padding: 5px 8px;
+    font-weight: bold;
+    font-size: .9em;
+    border-radius: 2px;
+
+}
+
 .modal-content-time {
+    margin: 0 5% 0 0;
     float: right;
 }
 
@@ -256,7 +270,7 @@ TIMER MODAL
     border: none;
     border-bottom: 1px solid #fff;
     margin-right: 10px;
-    width: 2em;
+    width: 1.75em;
 }
 
 .modal-content-time input:focus{
