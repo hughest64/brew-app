@@ -5,8 +5,12 @@ var display = document.getElementById('timer');
 var recipeName = document.getElementById('recipeName');
 var current_step = document.getElementById('current_step');
 var steps = localStorage['steps'];
+
 var hop_adds = localStorage['hop_adds'];
 var hopKeys = Object.keys(JSON.parse(hop_adds));
+
+var hopModal = document.getElementById('hop-modal');
+var hopList = document.getElementById('hop-list');
 
 var set = document.getElementById('set-text');
 var modal = document.getElementById('timer-modal');
@@ -52,9 +56,18 @@ window.onclick = function(event) {
 ////////////////////////////////////////////////////////
 function hopCheck(time) {
     var sec = Math.floor(time / 1000);
-    if (current_step.innerHTML == 'Boil' &&
-        hopKeys.indexOf(sec.toString()) != -1) {
-        alert(JSON.parse(hop_adds)[sec]);
+    var hop = hopKeys.indexOf(sec.toString())
+    var hops = Object.values(JSON.parse(hop_adds));
+    if (current_step.innerHTML == 'Boil' && hop != -1) {
+        for (var i=0; i < hops[hop].length; i++) {
+            var hopElement = document.createElement("li");
+            // set up how you want this displayed!!!
+            var hopText = document.createTextNode(hops[hop][i]);
+            hopElement.appendChild(hopText);
+            hopList.appendChild(hopElement);
+     }
+        hopModal.style.display = "block";
+
     }
 }
 

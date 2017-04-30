@@ -315,6 +315,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
+/***********************************************
+HOP MODAL
+************************************************/
+/* much work to do here !*/
+.hop-modal {
+    display: none;
+
+}
+
+
 
 
 
