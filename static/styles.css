@@ -122,6 +122,7 @@ CONTENT
 .timer-buttons button {
     margin: 0 3px;
     padding: 5px 8px;
+    border: none;
     background-color: #003b6f;
     color: #fff;
     font-size: .9em;
