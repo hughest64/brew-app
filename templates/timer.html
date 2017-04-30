@@ -5,7 +5,7 @@
         <script>
         if ( "{{ data['recipe_name'] }}" != localStorage['recipeName']) {
             var steps = {{ data['mash'] | tojson }};
-            var boil_time = [ 'Boil - {{ data['boil_time'] }} minutes' ]; // this is just the value
+            var boil_time = [ 'Boil - {{ data['boil_time'] }} minutes', {{ data['boil_time'] }} ]; // this is just the value
             steps.push(boil_time);
             var steps = JSON.stringify(steps);
             var hop_adds = JSON.stringify({{ data['boil'] | tojson }})
@@ -83,6 +83,13 @@
             </div>
         </div>
     </aside>
+    <aside id= "hop-modal" class="hop-modal">
+        <h3 class="hop-modal-header">Time to add hops!</h3>
+        <ul id="hop-list">
+            <li></li>
+        </ul>
+    </aside>
+
 {% endblock %}
 {% block footer %}
     <h2 id="set-text">Set a Timer</h2>
