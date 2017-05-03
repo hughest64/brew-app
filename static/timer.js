@@ -73,10 +73,11 @@ hopSpan.onclick = function() {
 function hopCheck(time) {
     var sec = Math.floor(time / 1000);
     var hop = hopKeys.indexOf(sec.toString())
-    var hops = Object.values(JSON.parse(hop_adds));
+    var hops = JSON.parse(hop_adds)[sec];
+    
     if (current_step.innerHTML == 'Boil' && hop != -1) {
-        for (var i=0; i < hops[hop].length; i++) {
-            var addThis = hops[hop][i];
+        for (var i=0; i < hops.length; i++) {
+            var addThis = hops[i];
             var message = addThis[1] + " oz " + addThis[0];
             var hopElement = document.createElement("li");
             var hopText = document.createTextNode(message);
