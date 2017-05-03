@@ -64,6 +64,15 @@ header,
     border-right: 2px solid #fff;
 }
 
+.version {
+    display: inline-block;
+    padding: 10px;
+    /*background-color: red;*/
+    margin-top: -20px;
+    float: right;
+    font-size: .65em;
+}
+
 .main-nav li {
     display: inline-block;
     padding: 0 10px 0;
