@@ -53,11 +53,19 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
     if (event.target == hopModal) {
+        var child = document.getElementsByClassName('hopTime')
+        for (var i = 0; i < hopList.childNodes.length; i++) {
+            hopList.removeChild(child[i]);
+        }
         hopModal.style.display = "none";
     }
 }
 
 hopSpan.onclick = function() {
+    var child = document.getElementsByClassName('hopTime')
+    for (var i = 0; i < hopList.childNodes.length; i++) {
+        hopList.removeChild(child[i]);
+    }
     hopModal.style.display = 'none';
 }
 
@@ -68,9 +76,12 @@ function hopCheck(time) {
     var hops = Object.values(JSON.parse(hop_adds));
     if (current_step.innerHTML == 'Boil' && hop != -1) {
         for (var i=0; i < hops[hop].length; i++) {
+            var addThis = hops[hop][i];
             var hopElement = document.createElement("li");
-            // set up how you want this displayed!!!
-            var hopText = document.createTextNode(hops[hop][i]);
+            var hopText = document.createTextNode(addThis);
+
+
+            hopElement.className = 'hopTime';
             hopElement.appendChild(hopText);
             hopList.appendChild(hopElement);
      }
