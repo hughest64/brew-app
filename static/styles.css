@@ -320,7 +320,7 @@ HOP MODAL
 ************************************************/
 /* much work to do here !*/
 .hop-modal {
-    display: none;
+    /*display: none;*/
     position: fixed;
     z-index: 1;
     left: 0;
@@ -333,10 +333,9 @@ HOP MODAL
 
 .hop-modal-content {
     text-align: center;
+    position: relative;
     box-shadow: none;
-    position: sticky;
-    margin: 35vh auto 0;
-    border: 3px solid #fff;
+    margin-top: 20vh;
 }
 
 
