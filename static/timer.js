@@ -77,10 +77,9 @@ function hopCheck(time) {
     if (current_step.innerHTML == 'Boil' && hop != -1) {
         for (var i=0; i < hops[hop].length; i++) {
             var addThis = hops[hop][i];
+            var message = addThis[1] + " oz " + addThis[0];
             var hopElement = document.createElement("li");
-            var hopText = document.createTextNode(addThis);
-
-
+            var hopText = document.createTextNode(message);
             hopElement.className = 'hopTime';
             hopElement.appendChild(hopText);
             hopList.appendChild(hopElement);
