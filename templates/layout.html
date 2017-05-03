@@ -3,7 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>{% block title %}Brew Some Beer!{% endblock %}</title>
+        <title>{% block title %}Let's Brew!{% endblock %}</title>
+        <!-- favicon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/img//apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/img//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/static/img//android-chrome-192x192.png">
+        <link rel="manifest" href="/static/img//manifest.json{{ query }}">
+        <link rel="mask-icon" href="/static/img//safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+        <!-- css -->
         <link href="/static/normalize.css{{ query }}" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:700|Josefin+Sans:400,600" rel="stylesheet">
         <link href="/static/styles.css{{ query }}" rel="stylesheet" type="text/css" />
@@ -11,14 +20,26 @@
     </head>
     <body>
         <header>{% block header %}{% endblock %}</header>
+        {% block nav %}
         <nav class="main-nav">
             <ul class="main-nav-list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/timer">Timer</a></li>
-                <li><a href="/recipes">Recipes</a></li>
-                <li><a href="/set">Set</a></li>
+                <li><a href="/" {% if request.path == "/" %}
+                    class="current-page" {% endif %}>Home</a>
+                </li>
+                <li><a href="/timer" {% if request.path == "/timer" %}
+                     class="current-page" {% endif %}>Timer</a>
+                </li>
+                <li><a href="/recipes" {% if request.path == "/recipes" %}
+                    class="current-page" {% endif %}>Recipes</a>
+                </li>
+                <li><a href="/stats" {% if request.path == "/stats" %}
+                    class="current-page" {% endif %}>Stats</a>
+                </li>
             </ul>
         </nav>
+        {% endblock %}
         {% block content %}{% endblock %}
+        <footer>{% block footer %}<h2 id="set-text"></h2>{% endblock %}</footer>
+        <!-- <script src="/static/index.js{{ query }}"></script> -->
     </body>
 </html>

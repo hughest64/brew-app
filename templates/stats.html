@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block title %}{{ super() }} | Details{% endblock %}
+{%  block header %}<h2 class="name">Recipe Data</h2>{% endblock %}
+{% block content %}
+<main class="wrapper">
+    <form action="/timer">
+        <section class="container">
+            <h3 class="container-heading">
+                This page will contain relevant recipe info
+            </h3>
+        </section>
+    </form>
+</main>
+{% endblock %}

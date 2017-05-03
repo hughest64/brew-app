@@ -12,8 +12,7 @@
             localStorage['hop_adds'] = hop_adds
             localStorage['steps'] = steps;
             localStorage['recipeName'] = "{{ data['recipe_name'] }}";
-            // set this to -1 so that nextTimer() will set a 0 index when the script loads
-            localStorage['stepIndex'] = '-1';
+            localStorage['stepIndex'] = '0';
             localStorage['recipeLoaded'] = "true";
         }
         </script>
@@ -29,30 +28,35 @@
 {% endblock %}
 <!-- nav content is included here from layout.html -->
 {% block content %}
-    <section class="wrapper">
-        <div class="timer-container">
+    <main class="wrapper">
+        <section class="timer-container">
             <h3 class="container-heading" id="current_step"></h3>
             <h1 class="timer-display" id="timer">00:00</h1>
             <div class="timer-buttons">
                 <button onclick="startTimer()" id="start">Start</button>
                 <button onclick="stopTimer()" id="stop">Stop</button>
                 <button onclick="resetTimer()" id="reset">Reset</button>
-                <button onclick="clearTimer()" id="clear">Clear</button>
-                <button onclick="nextTimer()" id="next">Next</button>
+                <!-- this needs to be reworked!!! -->
+                <!-- <button onclick="clearTimer()" id="clear">Clear</button> -->
+                <button id="next">Next</button>
             </div>
-        </div>
+        </section>
         {# list of mash steps #}
-        <div class="container">
+        <section class="container">
             <h3 class="container-heading">Mash Steps</h3>
             <ul>
                 {% for step in range(data['mash'] | length) %}
-                <li>{{ "{0} - {2}".format(*data['mash'][step]) }} &deg; {{ " for {1} minutes".format(*data['mash'][step]) }}</li>
+                <li id="mash-step-{{ loop.index0 }}" class="mash-step" onclick="goToStep(this.id)">
+                    {{ "{0} - {2}".format(*data['mash'][step]) }} &deg; {{ " for {1} minutes".format(*data['mash'][step]) }}
+                </li>
                 {% endfor %}
             </ul>
-        </div>
+        </section>
         {# list of boil additions #}
-        <div class="container">
-            <h3 class="container-heading">Boil Additons</h3>
+        <section class="container">
+            <h3 id="boil-adds-{{ data['mash'] | length }}" class="container-heading boil-adds" onclick="goToStep(this.id)">
+                Boil - {{ data['boil_time'] }} minutes
+            </h3>
             <ul>
                 {% for hops in data['boil'] | sort(reverse=True) %}
                     {% for hop in data['boil'][hops] %}
@@ -60,14 +64,35 @@
                     {% endfor %}
                 {% endfor %}
             </ul>
+        </section>
+    </main>
+
+    <aside class="modal" id="timer-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>SET A TIMER</h3>
+            <div class="modal-content-button">
+                <button type="submit" id="save10" onclick="xtraTime(0, 10)">10 MIN</button>
+                <button type="submit" id="save5" onclick="xtraTime(0, 5)">5 MIN</button>
+            </div>
+            <div class="modal-content-time">
+                <input id="hr" type="number" min="0" max="90" placeholder="HH">
+                <input id="mn" type="number" min="0" max="90" placeholder="MM">
+                <input hidden id="sec" type="number" min="0" max="59" placeholder="SS">
+                <button type="submit" id="save" onclick="xtraTime(hr.value, mn.value)">Set</button>
+            </div>
         </div>
-    </section>
-    <footer>
-        <h3>Set a Manual Timer</h3>
-        <input id="hr" type="number" min="0" max="90" placeholder="HH">
-        <input id="mn" type="number" min="0" max="90" placeholder="MM">
-        <input id="sec" type="number" min="0" max="59" placeholder="SS">
-        <button type="submit" id="save" onclick="setTimer()">Save</button>
-    </footer>
+    </aside>
+    <aside id= "hop-modal" class="hop-modal">
+        <div class="container hop-modal-content">
+            <span class="close">&times;</span>
+            <h3 class="container-heading hop-modal-header">Time to add hops!</h3>
+            <ul id="hop-list"></ul>
+        </div>
+    </aside>
+
+{% endblock %}
+{% block footer %}
+    <h2 id="set-text">Set a Timer</h2>
     <script src="/static/timer.js{{ query }}"></script>
 {% endblock %}

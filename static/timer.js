@@ -5,16 +5,99 @@ var display = document.getElementById('timer');
 var recipeName = document.getElementById('recipeName');
 var current_step = document.getElementById('current_step');
 var steps = localStorage['steps'];
+
 var hop_adds = localStorage['hop_adds'];
 var hopKeys = Object.keys(JSON.parse(hop_adds));
 
+var hopModal = document.getElementById('hop-modal');
+var hopList = document.getElementById('hop-list');
 
+var set = document.getElementById('set-text');
+var modal = document.getElementById('timer-modal');
+var span = document.getElementsByClassName('close')[0];
+var hopSpan = document.getElementsByClassName('close')[1];
+
+var mashSteps = document.getElementsByClassName('mash-step');
+
+function currentMashStep() {
+    for (var i=0; i < mashSteps.length; i++) {
+        if (i == Number(localStorage['stepIndex'])) {
+            mashSteps[i].style.color = "#b3dbff";
+            mashSteps[i].style.fontWeight = "bold";
+        }
+        else {
+            mashSteps[i].style.color = "#fff";
+            mashSteps[i].style.fontWeight = "normal";
+        }
+    }
+}
+
+function goToStep(clicked_id) {
+    var id = clicked_id.slice(-1);
+    if (id != localStorage['stepIndex']) {
+        localStorage['stepIndex'] = id;
+        nextTimer();
+    }
+}
+
+set.onclick = function() {
+    modal.style.display = 'block';
+}
+
+span.onclick = function() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    if (event.target == hopModal) {
+        var child = document.getElementsByClassName('hopTime')
+        for (var i = 0; i < hopList.childNodes.length; i++) {
+            hopList.removeChild(child[i]);
+        }
+        hopModal.style.display = "none";
+    }
+}
+
+hopSpan.onclick = function() {
+    var child = document.getElementsByClassName('hopTime')
+    for (var i = 0; i < hopList.childNodes.length; i++) {
+        hopList.removeChild(child[i]);
+    }
+    hopModal.style.display = 'none';
+}
+
+////////////////////////////////////////////////////////
 function hopCheck(time) {
     var sec = Math.floor(time / 1000);
-    if (current_step.innerHTML == 'Boil' &&
-        hopKeys.indexOf(sec.toString()) != -1) {
-        alert(JSON.parse(hop_adds)[sec]);
+    var hop = hopKeys.indexOf(sec.toString())
+    var hops = JSON.parse(hop_adds)[sec];
+    
+    if (current_step.innerHTML == 'Boil' && hop != -1) {
+        for (var i=0; i < hops.length; i++) {
+            var addThis = hops[i];
+            var message = addThis[1] + " oz " + addThis[0];
+            var hopElement = document.createElement("li");
+            var hopText = document.createTextNode(message);
+            hopElement.className = 'hopTime';
+            hopElement.appendChild(hopText);
+            hopList.appendChild(hopElement);
+     }
+        hopModal.style.display = "block";
+
     }
+}
+
+function xtraTime(hour, minute) {
+    hr.value = hour;
+    mn.value = minute;
+    current_step.innerHTML = 'timer';
+    // localStorage['stepIndex'] = JSON.parse
+    localStorage['stepIndex'] = JSON.parse(steps).length + 1;
+    setTimer();
+    modal.style.display = 'none';
 }
 
 function setTimer() {
@@ -32,6 +115,8 @@ function setTimer() {
         localStorage['remainingTime'] = remainingTime;
         localStorage['resetTime'] = resetTime;
         formatDisplay(remainingTime);
+        hr.value = "";
+        mn.value = "";
     }
 }
 
@@ -50,25 +135,25 @@ function runTimer() {
         if (remainingTime > 999) {
             timer = setTimeout(runTimer, 1000);
         } else {
-            // make values falsey
             localStorage['isRunning'] = '';
             localStorage['remainingTime'] = '';
             localStorage['resetTime'] = '';
+            localStorage['stepIndex'] = Number(localStorage['stepIndex']) + 1;
             nextTimer();
         }
     }
 }
 
-function formatDisplay(t) {
-    var h = Math.floor(t/3600000);
-    var m = Math.floor(t/60000) % 60;
-    var s = Math.floor(t/1000) % 60;
+function formatDisplay(time) {
+    var hour = Math.floor(time/3600000);
+    var minute = Math.floor(time/60000) % 60;
+    var second = Math.floor(time/1000) % 60;
 
-    var displayHr = "0" + h;
-    var displayMn = "0" + m;
-    var displaySec = "0" + s;
+    var displayHr = "0" + hour;
+    var displayMn = "0" + minute;
+    var displaySec = "0" + second;
 
-    if (h > 0) {
+    if (hour > 0) {
         display.innerHTML = displayHr.slice(-2) + ":" + displayMn.slice(-2) + ":" + displaySec.slice(-2);
     } else {
         display.innerHTML = displayMn.slice(-2) + ":" + displaySec.slice(-2);
@@ -108,14 +193,19 @@ function clearTimer() {
 function nextTimer() {
     var index = Number(localStorage['stepIndex']);
     var parsed = JSON.parse(steps);
-    index ++;
     if (localStorage['stepIndex'] && index < (parsed.length)) {
         stopTimer();
         current_step.innerHTML = parsed[index][0];
         mn.value = (parsed[index][1])
         localStorage['stepIndex'] = index;
         setTimer();
+        currentMashStep();
     }
+}
+
+next.onclick = function() {
+    localStorage['stepIndex'] = Number(localStorage['stepIndex']) + 1;
+    nextTimer();
 }
 
 if (localStorage['recipeLoaded']) {
@@ -129,5 +219,6 @@ if (localStorage['recipeLoaded']) {
     var parsed = JSON.parse(steps);
     recipeName.innerHTML = localStorage['recipeName']
     current_step.innerHTML = parsed[index][0];
+    currentMashStep();
     runTimer();
 }

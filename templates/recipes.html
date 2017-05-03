@@ -1,7 +1,8 @@
 {% extends 'layout.html' %}
+{% block title %}{{ super() }} | Recipes{% endblock %}
 {%  block header %}<h2 class="name">Recipes</h2>{% endblock %}
 {% block content %}
-<section class="wrapper">
+<main class="wrapper">
     <form action="{{ url_for('saverecipe') }}" class="container" id="recipes" method="post">
         <h3 class="container-heading">select a recipe</h3>
         <ul>
@@ -14,5 +15,5 @@
         </ul>
         <input type="submit" value="Brew It!">
     </form>
-</section>
+</main>
 {% endblock %}
