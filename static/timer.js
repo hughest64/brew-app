@@ -15,6 +15,7 @@ var hopList = document.getElementById('hop-list');
 var set = document.getElementById('set-text');
 var modal = document.getElementById('timer-modal');
 var span = document.getElementsByClassName('close')[0];
+var hopSpan = document.getElementsByClassName('close')[1];
 
 var mashSteps = document.getElementsByClassName('mash-step');
 
@@ -51,6 +52,13 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+    if (event.target == hopModal) {
+        hopModal.style.display = "none";
+    }
+}
+
+hopSpan.onclick = function() {
+    hopModal.style.display = 'none';
 }
 
 ////////////////////////////////////////////////////////
