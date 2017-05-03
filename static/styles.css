@@ -335,10 +335,23 @@ HOP MODAL
     text-align: center;
     position: relative;
     box-shadow: none;
-    margin-top: 20vh;
+    border: 5px solid #fff;
+    margin-top: 35vh;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: .75s;
+    animation-name: animatetop;
+    animation-duration: .75s
 }
 
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
 
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
 
 
 
