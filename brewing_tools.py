@@ -80,6 +80,23 @@ class BeerXMLParser(object):
         self.og = self.recipe.find('EST_OG').text.split()[0]
         self.abv = self.recipe.find('EST_ABV').text.split()[0]
 
+        '''
+        use self.tree.iter() to get these (or self.recipe.find())
+        VERSION
+        TYPE
+        BATCH_SIZE (already have this)
+        BOIL_SIZE
+
+        get these from the first mash step (MASH_STEP[0] I think)
+        - INFUSE_AMOUNT
+        - INFUSE_TEMP
+        
+        to get est. og use formula:
+        finals:          water
+        ((Va x SGa)   + (Vb x SGb))   /(Va + Vb) = sg of two things combined
+        vb will be (BOIL_SIZE - TRUB_CHILLER_LOSS - BATCH_SIZE)
+        '''
+
         self.set_mash_steps()
         self.set_hops()
 

@@ -1,12 +1,13 @@
 {% extends 'layout.html' %}
 {% block title %}{{ super() }} | Details{% endblock %}
-{%  block header %}<h2 class="name">Recipe Data</h2>{% endblock %}
+<!-- use a data.get() here to set a placeholder if no data? -->
+{%  block header %}<h2 class="name">Recipe Name - Data</h2>{% endblock %}
 {% block content %}
 <main class="wrapper">
     <form action="/timer">
         <section class="container">
             <h3 class="container-heading">
-                23.5 quarts liqour to 165 &deg;
+                23.5 quarts liquor to 165 &deg;
             </h3>
             <ul>
                 <li>Other data here?</li>
@@ -42,4 +43,7 @@
         </section>
     </form>
 </main>
+{% endblock %}
+{% block footer %}
+<h2>set actual values here after input above? Or the timer?</h2>
 {% endblock %}
